@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: node-example-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: node-example
+    spec:
+      containers:
+      - name: node-example
+        image: huseyinbabal/node-example
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
