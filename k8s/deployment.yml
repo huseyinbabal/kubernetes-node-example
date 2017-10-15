@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: node-example-deployment
+  name: node-example
 spec:
   replicas: 1
   template:
@@ -15,3 +15,8 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
+        resources:
+            limits:
+              cpu: "0.5"
+            requests:
+              cpu: "0.25"
